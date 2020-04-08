@@ -21,7 +21,7 @@ app.use(express.urlencoded({extended: true}));
 //tell express to use the express static function to render the public folder 
 app.use(express.static("public"));
 //tell express to use your backend api routes file (whenever someone his this type of route - theserver will grab the backend file) - sets the prefix for your backend routes
-app.use("/api", backEnd);
+//app.use("/api", backEnd);
 //tell express to use your frontend routes file () - this sets the prefix for your frontend routes
 app.use("/", frontEnd)
 
