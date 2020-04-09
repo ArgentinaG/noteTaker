@@ -7,17 +7,17 @@ var express = require('express')
 var app = express();
 
 //require your frontend route file  (place it in a variable)
-var frontEnd= require("./routes/htmlRoutes");
+var frontEnd = require("./routes/htmlRoutes");
 //require the backend route file (place it in a variable)
-var backEnd= require("./routes/apiRoutes");
+var backEnd = require("./routes/apiRoutes");
 //Create variables that hold the port number of choice (include process.env)
- var Port = 5000;
+var Port = process.env.PORT || 5000;
 
 //use()
 //tell express to use the express json function 
 app.use(express.json());
 //tell express to use the express urlencoded extended true function
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 //tell express to use the express static function to render the public folder 
 app.use(express.static("public"));
 //tell express to use your backend api routes file (whenever someone his this type of route - theserver will grab the backend file) - sets the prefix for your backend routes
